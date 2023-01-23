@@ -1,0 +1,196 @@
+CORES 
+
+    Existem várias formas de definirmos cores utilizando o CSS. Elas são:
+
+	- Cores pré-definidas
+	- Palavra-chave "currentcolor"
+	- Hexadecimal
+	- Hexadecimal com transparência
+	- RGB
+	- RGBA
+	- HSL
+	- HSLA
+
+IMAGENS
+
+    Propriedade object-fit (ajuste de objeto)
+	:fill (padrão)
+	:contain (imagem mantém resolução original e se ajusta para caber na div)
+	:cover (imagem preenche toda a div, mas sem distorcer apenas cortando a imagem)
+	:none (imagem mantém tamanho dela original)
+	:scale-down (contain ou none, qual representar uma imagem menor)
+
+    Propriedade object-position 
+	:Xpx Ypx (positivo e negativo)
+	:left
+	:right
+	:center
+	:top
+	:bottom
+	:start
+	:end
+
+FUNDO DOS ELEMENTOS
+
+    background-image
+	:url('')
+	:linear-gradient( , )
+	:radial-gradient( , )
+	:repeating-...-gradient( , )
+	//criam-se camadas passando mais de uma imagem nos parâmetros
+    
+    projects.verou.me/css3patterns/
+
+    background-size
+	:Xpx Ypx (um único valor representa a largura)
+	:X% Y% (um único valor representa a largura)
+	:auto (padrão)
+	:cover (imagem cobre toda a div)
+	:contain (imagem aparece completamente)
+	//separando por vírgula, podemos passar parâmetros para diferentes camadas
+
+    background-repeat
+	:repeat (padrão)
+	:repeat-x
+	:repeat-y 
+	:space (imagem aparece com repetições espaçadas sem cortar a imagem)
+	:round (imagem é redimensionada sem cortes para cobrir toda a div)
+	:no-repeat
+	//posso passar dois valores separados por espaço para diferenciar o comportamento nos eixos X e Y
+
+    background-position
+	:Xpx Ypx (apenas um valor representa eixo X)
+	:X% Y% (apenas um valor representa eixo X)
+	:bottom
+	:top
+	:left
+	:right
+	:center
+	//passando dois valores separados por espaço atribui-se diferentes posicionamento nos eixos X e Y	
+ 	//e separando por vírgula define parâmetros para outras camadas
+	//ainda posso combinar as palavras reservadas de posição com as medidas px e %
+
+    background-attachment
+	:fixed (imagem de fundo fica fixa)
+	:scroll (imagem acompanha o scroll da página)
+	:local (imagem acompanha o scroll da div)
+
+    background-origin
+	:padding-box (padrão//cobre a área do padding)
+	:border-box (cobre a borda)
+	:content-box (cobre apenas a área do contéudo)
+
+    background-clip (consegue utilizar cor sólida também + efeito)
+	:padding-box (preenche a área do padding)
+	:border-box (preenche até a área da borda)
+	:content-box (preenche apenas a área do conteúdo)
+	:text (efeito de fundo no texto)
+	    -webkit-background-clip: text;
+	    color: transparent;
+	    background-clip:  text;
+
+    background-blend-mode (efeitos de mesclagem)
+	//background-color e background-image interagindo
+	:normal (padrão)
+	:multiply
+	:screen
+	:overlay
+	:darken
+	:lighten
+	:color-dodge
+	:color-burn
+	:hard-light
+	:soft-light
+	:difference
+	:exclusion
+	:hue
+	:saturation
+	:color
+	:luminosity
+
+    background (short-hand)
+	Exemplo:
+
+	background:
+	    url('../')  /*image*/
+	    top center / 200px 200px /*position / size*/
+	    no-repeat /*repeat*/
+	    fixed /*attachment*/
+	    padding-box /*origin*/
+	    content-box /*clip*/
+	    red; /*color*/
+
+BORDAS
+    border (short-hand)
+
+	border-width (definir espessura da borda)
+	    :Xpx (posso definir até quatro valores)
+	    :thin (fina/1px)
+	    :medium (3px)
+	    :thick (5px)
+
+    	border-style
+	    :none (padrão)
+	    :solid
+	    :dashed
+	    :dotted
+	    :double
+	    :groove
+	    :ridge
+	    :inset
+	    :outset
+	    //posso definir até quatro parâmetros
+
+	border-color
+	    :<qualquer dos tipos de cores>
+	    //posso definir até quatro cores
+
+	exemplos:
+
+	border: 10px solid rgb(83, 8, 84);
+	border-bottom:5px dashed red;
+	border-top-style: double;
+
+    border-radius
+	:Xpx (posso definir até quatro valores)
+	:Xpx/Ypx (separando por barra cria efeito não redondo)
+	:X% (eclipse ou circulo)
+
+    border-image (short-hand)
+
+	border-image-source (tem quq ter uma border definida)
+	    :none (padrão)	    
+	    :url('../')
+	    :linear-gradient( , )
+
+	border-image-slice (criar fatias)
+
+	    1	    5	    2
+	    8	    9	    6
+    	    4	    7	    3
+
+	    :fill
+	    :<valor numérico>
+	    //borda com imagem usar background-image-source:url('../') e background-repeat: repeat
+	    //borda com degradê usar backgroun-image-source:linear-gradient( , )
+
+	border-image-width
+	    :Xpx (até 4 valores)
+	    :outras unidades de medidas...
+	    :auto (de acordo com o tamanho da imagem)
+
+	border-image-repeat
+	    :repeat
+	    :stretch (estica as fatias 5, 6, 7 e 8)
+	    :round (redimensionar para caber a imagem sem cortar)
+	    :space (distorce imagem e separa com espaçamento para caber sem cortar)
+	    //posso definir mais de um parâmetro
+
+	border-image-outset (distância do border-image da borda)
+	    :Xpx (até 4 valores)
+	    :outras unidades de medidas...
+
+	exemplos:
+	
+	    url('../') 169 round; (source, slice, repeat)
+	    url('../') 169 / 10px 20px / 1 round; (source, slice, width, outset, repeat)

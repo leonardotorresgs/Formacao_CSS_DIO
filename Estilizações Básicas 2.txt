@@ -1,0 +1,218 @@
+FONTES
+
+    tipos genéricos (família de fontes):
+	- serif
+	    Times New Roman
+	    Georgia
+	- sans-serif
+	    Arial
+	- display
+	- handwriting
+	- monospace
+	
+	fonts.google.com
+
+    @font-face {
+    	font-family: <apelido para a fonte>
+	src:
+	    local()
+	    url('')
+	//font-weight: (opcional)
+    }
+
+    @import url('')
+
+    font-family
+	:tipo genérico (display=fantasy)
+	:<nome da fonte>
+	//colocar aspas se a fonte tiver mais de uma palavra e separada por espaço
+	//pode passar mais de um parâmetro
+	
+    font-size
+	:Xpx
+	:outras unidades de medidas...
+	:xx-small
+	:x-small
+	:small
+	:medium
+	:large
+	:x-large
+	:xx-large
+	:smaller (elemento pai maior que o filho)
+	:larger (elemento filho maior que o pai)
+
+    font-style
+	:normal (padrão)
+	:italic
+	:oblique
+	
+    font-weight
+	:normal (padrão)
+	:bold
+	:lighter
+	:bolder
+	:<100-900>
+
+    font-variant (deixa em caixa alta mas com tamanho menor)
+	:normal (padrão)
+	:small-caps    
+
+    font-stretch (a fonte tem que ter essa configuração)
+	:ultra-condensed
+	:extra-condensed
+	:semi-condensed
+	:normal (padrão)
+	:semi-expanded
+	:expanded
+	:extra-expanded
+	:ultra-expanded
+
+    line-height
+	:normal (padrão)
+	:<valor multiplicador>
+	:X% (relativo ao tamanho da fonte)
+	//pelo menos 1.5 para melhor leitura
+
+    font (short-hand)
+	style/variant/weight/size*/height/family*
+
+	exemplo:
+    	    font: italic small-caps bold 24px/2 Georgia, serif;	
+
+TEXTOS
+
+    text-transform
+	é responsável por definir quais caracteres vão estar em maíusculo, minúsculo, etc.
+
+	:none/initial (padrão)
+	:capitalize (primeiro caractere em caixa alta)
+	:uppercase (totalmente maiúsculo)
+	:lowercase (totalmente minúsculo)
+	:inherit (herda o padrão do elemento pai)
+
+    text-align
+	é responsável por alinhar nosso texto no elemento
+
+	:left (padrão)
+	:right
+	:center
+	:justify
+
+    text-decoration
+	adiciona ou remove linhas no nosso texto: sejam linhas em cima, no meio, ou embaixo
+	
+	text-decoration: underline wavy red 2px;
+
+	text-decoration-line
+	    :none (padrão)
+	    :underline (padrão para a tag <a>)
+	    :line-through (padrão para a tag <s>)
+	    :overline 
+
+	text-decoration-style
+	    :solid (padrão)
+	    :double
+	    :dotted
+	    :dashed
+	    :wavy
+
+	text-decoration-color
+	    :<tipos de cores>
+	    //mudar a cor da linha, por padrão é a cor do texto
+
+	text-decoration-thickness
+	    :Xpx
+	    :outras unidades de medidas...
+
+    text-ident
+	recuo na primeira linha de um parágrafo
+
+	:Xpx (aceita valores positivos e negativos)
+	:outras unidades de medidas...
+
+    letter-spacing
+	:normal (padrão)
+	:Xpx (aceita valores positivos e negativos)
+	:outras unidades de medidas...
+
+    word-spacing
+	:normal (padrão)
+	:Xpx (aceita valores positivos e negativos)
+	:outras unidades de medidas...
+
+    white-space
+	define como os espaços em branco do texto de um determinado elemento é tratado
+
+	:normal (padrão/só quebra linha quando preenche a linha)
+	:nowrap (texto uma linha só)
+	:pre (texto da forma que está escrito/pode vazar pela div)
+	:pre-line (não preserva o espaço em branco/quebra a linha em dois momentos: fim da linha e quando tem uma quebra de linha)
+	:pre-wrap (preserva espaço em branco/quebra a linha em dois momentos)
+	:break-spaces (igual pre-wrap só que sem vazar)
+
+    word-wrap
+	caso uma palavra seja muito grande para caber em uma linha, se ela será quebrada em qualquer caractere ou toda palavra na mesma linha e ultrapassar o limite do elemento
+
+	:normal (padrão)
+	:break-word
+
+    word-break
+	define quando o nosso texto deve ter uma quebra de linha
+
+	:normal (padrão)
+	:break-all
+	:keep-all (vai tratar igual o normal exceto para idiomas como japonês, chinês, etc que não podem ter quebra de linha no meio de uma palavra)
+
+    writing-mode
+	define a orientação do texto(vertical ou horizontal/muito usado pra idiomas como japonês)
+
+	:horizontal-tb (padrão)
+	:vertical-rl (texto fica de lado da direita p/ esquerda) 
+	:vertical-lr (texto fica de lado da esquerda p/ direita)
+
+    text-overflow
+	
+	:clip (padrão)
+	:ellipsis (adiciona reticências se tiver texto oculto)
+
+SOMBRAS
+
+    box-shadow
+	:inset Xpx Ypx Zpx Bx <color>
+
+	Z - desfoque
+	B - propagação	
+	inset - sombra interna/efeito de botão apertado
+
+    filter
+	drop-shadow()
+
+    text-shadow
+	:Xpx Ypx Zpx <color>
+
+OUTROS
+
+    opacity
+	define o nível de opacidade(transparência de um elemento)
+
+	:<valor de 0 a 1>
+
+    overflow
+	controla como o conteúdo deve ser exibido caso ultrapasse os limites do container
+	só funciona se largura e/ou altura do elemento forem definidos
+
+	:visible (padrão)
+	:hidden (o q estiver fora do container é cortado)
+	:scroll (cria uma barra de rolagem dentro do container)
+	:auto (só cria a barra de rolagem se o conteúdo ultrapassar o limite)
+
+    overflow-x  (só se aplica ao eixo X)
+    overflow-y  (só se aplica ao eixo Y)
+
+ 
+    Redefinindo as propriedades padrões dos navegadores
+	Reset CSS é uma folha de estilos que irá sobrepor todas as propriedades de estilo CSS que os navegadores colocam por padrão nos elementos, ajudando com que os sites tenham o mesmo design em todos os navegadores.
+
+	@import url('./reset.css')
+
+
