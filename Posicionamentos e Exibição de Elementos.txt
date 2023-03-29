@@ -1,0 +1,17 @@
+PROPRIEDADES DE EXIBIÇÃO
+
+    display
+	:block (preenche a linha toda)
+	:inline (ocupa apenas a largura necessaria do elemento)
+	:inline-block
+	:none
+	:flex
+	:grid
+
+	Apropriedade display vai determinar como essas 
+caixinhas retangulares irão se comportar na hora de serem
+exibidas na tela. Cada tag já possui por padrão um valor 
+da propriedade display diferente.
+
+
+POSICIONANDO OS ELEMENTOS
